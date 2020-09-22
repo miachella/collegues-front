@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CollegueComponent } from './collegue/collegue.component';
+import { CreerComponent } from './creer/creer.component';
+import { ModifierComponent } from './modifier/modifier.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CollegueComponent
+    CollegueComponent,
+    CreerComponent,
+    ModifierComponent
   ],
   imports: [
     BrowserModule
