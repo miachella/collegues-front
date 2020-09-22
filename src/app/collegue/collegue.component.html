@@ -1,17 +1,27 @@
-<div class="card border-dark mb-3" style="max-width: 800px;">
+<div class="card border-dark bg-info mb-3" style="max-width: 1000px; margin-left: 10rem;">
     <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="{{col.photoUrl}}" class="card-img" style="max-height: 300px; width: auto;" alt="">
+      <div class="col-md-6 text-center">
+        <img src="{{col.photoUrl}}" class="card-img border-dark img-thumbnail rounded" style="max-height: 300px; width: auto; margin-top: 15px; margin-bottom: 15px;" alt="">
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
         <div class="card-body">
           <h5 class="card-title">Bonjour, collègue !</h5>
-          <p class="card-text"> Matricule : {{col.matricule}} <br>
-            Nom : {{col.nom}} <br>
-            Prénoms : {{col.prenoms}} <br>
-            Date de naissance : {{col.dateDeNaissance | date:'dd/MM/yyyy'}} <br>
-            E-mail : {{col.email}} </p>
+          <div class="row">
+            <div class="col-sm card-text">Matricule :</div><div class="col-sm card-text">{{col.matricule}}</div>
+          </div>
+          <div class="row">
+              <div class="col-sm card-text">Nom :</div><div class="col-sm card-text">{{col.nom}}</div>
+          </div>
+          <div class="row">
+            <div class="col-sm card-text">Prénoms :</div><div class="col-sm card-text">{{col.prenoms}}</div>
+          </div>
+          <div class="row">
+            <div class="col-sm card-text">Date de naissance :</div><div class="col-sm card-text">{{col.dateDeNaissance | date:'dd/MM/yyyy'}}</div>
+          </div>
+          <div class="row">
+            <div class="col-sm card-text">E-mail :</div><div class="col-sm card-text">{{col.email}}</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+</div>
