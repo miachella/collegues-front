@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Collegue } from '../models/Collegue';
 
 @Component({
   selector: 'app-collegue',
@@ -7,11 +8,20 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CollegueComponent implements OnInit {
 
-  @Input() col;
+  @Input() col: Collegue;
+  @Output() change:EventEmitter<string> = new EventEmitter<string>();
+
+  condition: boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  
+
+  quandOnClique() {
+    this.condition = !this.condition;
+    }
 
 }
