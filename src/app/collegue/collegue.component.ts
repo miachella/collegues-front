@@ -9,19 +9,25 @@ import { Collegue } from '../models/Collegue';
 export class CollegueComponent implements OnInit {
 
   @Input() col: Collegue;
-  @Output() change:EventEmitter<string> = new EventEmitter<string>();
-
-  condition: boolean = true;
+  modeAffichage = true;
+  modeCreation = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  
+  creerColl() {
+    console.log('Créer un nouveau collègue');
+    this.modeCreation = true;
+    }
 
-  quandOnClique() {
-    this.condition = !this.condition;
+    modifierColl(){
+      this.modeAffichage = false;
+    }
+
+    validerColl(){
+      this.modeAffichage = true;
     }
 
 }
