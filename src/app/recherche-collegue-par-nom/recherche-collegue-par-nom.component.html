@@ -1,10 +1,10 @@
 <div class="row">
-    <div class="col-4">Recherche par nom : </div>
-    <input class="col-3 form-control" type="text">
-    <button type="button" class="col-3 btn btn-info offset-1" (click)="rechercherCol()">Rechercher</button>
+  <div class="col-4">Recherche par nom : </div>
+  <input class="col-3 form-control" type="text">
+  <button type="button" class="col-3 btn btn-info offset-1" (click)="rechercherCol()">Rechercher</button>
 </div>
-<div *ngIf="affichageListe" class="row">
-    <ul>
-        <li *ngFor="let obj of matricules">{{obj.matricule}} : {{obj.nom | uppercase}} {{obj.prenoms}}</li>
-    </ul>
+<div *ngIf="matricules" class="row">
+  <ul>
+    <li *ngFor="let mat of matricules">{{mat}}</li>
+  </ul>
 </div>
