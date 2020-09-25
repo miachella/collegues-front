@@ -1,26 +1,20 @@
+import { c1, c2 } from './../mock/collegues.mock';
+import { colleguesTab } from './../mock/matricules.mock';
+import { Collegue } from './../models/Collegue';
 import { Injectable } from '@angular/core';
-import { Collegue } from '../models/Collegue';
-import { matricules } from '../mock/matricules.mock';
-import { c1 } from '../mock/collegues.mock';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private _matricules: Collegue[] = matricules;
-  private _c1: Collegue = c1;
-
   constructor() { }
 
   rechercherParNom(nom: string): string[] {
-    const listMatricules: string[] = [];
-    return listMatricules;
-    }
+    return colleguesTab.map(c => c.matricule);
+  }
 
-    recupererCollegueCourant(): Collegue {
-    return c1;
-    }
-    
+  recupererCollegueCourant(): Collegue {
+    return c2;
+  }
 }
