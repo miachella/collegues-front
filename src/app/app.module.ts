@@ -4,15 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CollegueComponent } from './collegue/collegue.component';
 import { RechercheCollegueParNomComponent } from './recherche-collegue-par-nom/recherche-collegue-par-nom.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormCreationComponent } from './form-creation/form-creation.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CollegueComponent,
-    RechercheCollegueParNomComponent
+    RechercheCollegueParNomComponent,
+    FormCreationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

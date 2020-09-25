@@ -16,7 +16,7 @@ export class CollegueComponent implements OnInit {
   constructor(private dataSrv: DataService) { }
 
   ngOnInit(): void {
-    this.col = this.dataSrv.recupererCollegueCourant();
+    this.dataSrv.recupererCollegueCourant().subscribe(colSelect => this.col = colSelect);
   }
 
   creerColl() {
