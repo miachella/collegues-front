@@ -1,1 +1,43 @@
-<p>form-creation works!</p>
+<form>
+    <div class="row">
+      <div class="col-4">
+        <input [(ngModel)]="collegue.nom" #champNom="ngModel" name="nom" type="text" class="form-control" placeholder="Nom" required>
+        <div *ngIf="champNom.invalid">
+            Le nom est obligatoire
+        </div>
+      </div>
+      <div class="col-4">
+        <input [(ngModel)]="collegue.prenoms" #champPrenoms="ngModel" name="prenoms" type="text" class="form-control" placeholder="Prénoms" required>
+        <div *ngIf="champPrenoms.invalid">
+            Le prénom est obligatoire
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-4">
+          <input [(ngModel)]="collegue.dateDeNaissance" #champDate="ngModel" name="dateDeNaissance" type="text" class="form-control" placeholder="Date de naissance" required>
+          <div *ngIf="champDate.invalid">
+            La date de naissance est obligatoire
+        </div>
+        </div>
+        <div class="col-4">
+          <input [(ngModel)]="collegue.email" #champEmail="ngModel" name="email" type="text" class="form-control" placeholder="E-mail" required>
+          <div *ngIf="champEmail.invalid">
+            L'e-mail est obligatoire
+        </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-4">
+          <input [(ngModel)]="collegue.photoUrl" #champPhotoUrl="ngModel" name="photoUrl" type="text" class="form-control" placeholder="URL de la photo" required minlength="7">
+          <div *ngIf="champPhotoUrl.invalid">
+            L'URL de la photo est obligatoire
+        </div>
+        </div>
+      </div>
+  </form>
+  <br>
+  <button type="button" class="btn btn-info" (click)="valider()">Soumettre le formulaire</button>
+
