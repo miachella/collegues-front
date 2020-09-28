@@ -1,6 +1,5 @@
-import { c1, c2 } from './../mock/collegues.mock';
-import { colleguesTab } from './../mock/matricules.mock';
 import { Collegue } from './../models/Collegue';
+import { CollegueInForm } from '../form-creation/form-creation.component'
 import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -43,6 +42,18 @@ export class DataService {
         new Date(collegueBack.dateDeNaissance), collegueBack.photoUrl)),
       tap(collegue => this.subCollegueSelectionne.next(collegue))
     );
-
   }
-}
+
+  creerCollegue(collegue: CollegueInForm): Observable<Collegue> {
+    return this.http.post<CollegueBack>(
+      `${this.URL_BACKEND}`,
+      collegue)
+      .pipe(
+        map(collegueBack => {
+          const collegueEntre = new Collegue(collegueBack.matricule, collegueBack.nom, collegueBack.prenoms, collegueBack.email,
+            new Date(collegueBack.dateDeNaissance), collegueBack.photoUrl);
+          console.log(collegueEntre);
+          return collegueEntre;
+        }));
+  }
+  }

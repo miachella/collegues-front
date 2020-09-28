@@ -1,4 +1,4 @@
-<form>
+<form #etatForm="ngForm">
     {{collegue | json}}
     <div class="row">
       <div class="col-4">
@@ -38,7 +38,15 @@
         </div>
         </div>
       </div>
+
+      <div *ngIf="erreurTechnique" class="alert alert-danger" role="alert">
+        Oopss !!!!!
+      </div>
+
+      <br>
+
+      <button type="button" [disabled]="etatForm.invalid" class="btn btn-info" (click)="valider()">Soumettre le formulaire</button>
+
+
   </form>
-  <br>
-  <button type="button" class="btn btn-info" (click)="valider()">Soumettre le formulaire</button>
 

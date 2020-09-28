@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
-interface Collegue {
+export interface CollegueInForm {
   nom?: string;
   prenoms?: string;
   email?: string;
@@ -16,15 +17,22 @@ interface Collegue {
 })
 export class FormCreationComponent implements OnInit {
 
-  collegue: Collegue = {};
+  collegue: CollegueInForm = {};
+  erreurTechnique = false;
 
-  constructor() { }
+  constructor(private dataSrv: DataService) { }
 
   ngOnInit(): void {
   }
 
   valider(): void {
-    console.log(this.collegue);
-  }
+
+    this.dataSrv.creerCollegue(this.collegue).subscribe(
+      col => {
+        this.collegue = {};
+      },
+      error => this.erreurTechnique = true
+    );
+    }
 
 }
