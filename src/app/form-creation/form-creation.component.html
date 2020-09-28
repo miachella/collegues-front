@@ -1,4 +1,5 @@
 <form>
+    {{collegue | json}}
     <div class="row">
       <div class="col-4">
         <input [(ngModel)]="collegue.nom" #champNom="ngModel" name="nom" type="text" class="form-control" placeholder="Nom" required>
