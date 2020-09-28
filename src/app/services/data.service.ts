@@ -23,12 +23,13 @@ interface CollegueBack {
 })
 export class DataService {
 
+  URL_BACKEND: string = environment.backendUrl;
   private subCollegueSelectionne = new Subject<Collegue>();
 
   constructor(private http: HttpClient) { }
 
   rechercherParNom(nom: string): Observable<string[]> {
-    return this.http.get<string[]>(`${environment.backendUrl}?nom=${nom}`);
+    return this.http.get<string[]>(`${this.URL_BACKEND}?nom=${nom}`);
   }
 
   recupererCollegueCourant(): Observable<Collegue> {
@@ -36,7 +37,7 @@ export class DataService {
   }
 
   publierCol(matricule: string): Observable<Collegue>{
-    return this.http.get<CollegueBack>(`${environment.backendUrl}?matricule=${matricule}`)
+    return this.http.get<CollegueBack>(`${this.URL_BACKEND}?matricule=${matricule}`)
     .pipe(
       map(collegueBack => new Collegue(collegueBack.matricule, collegueBack.nom, collegueBack.prenoms, collegueBack.email,
         new Date(collegueBack.dateDeNaissance), collegueBack.photoUrl)),
