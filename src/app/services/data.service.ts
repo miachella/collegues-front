@@ -17,6 +17,11 @@ interface CollegueBack {
   photoUrl: string;
 }
 
+interface CollegueGalerie {
+  matricule: string;
+  photoUrl: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,6 +31,10 @@ export class DataService {
   private subCollegueSelectionne = new Subject<Collegue>();
 
   constructor(private http: HttpClient) { }
+
+  lister(): Observable<CollegueGalerie[]> {
+    return this.http.get<CollegueGalerie[]>(`${this.URL_BACKEND}`);
+  }
 
   rechercherParNom(nom: string): Observable<string[]> {
     return this.http.get<string[]>(`${this.URL_BACKEND}?nom=${nom}`);
