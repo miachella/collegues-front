@@ -1,16 +1,21 @@
 <nav class="navbar navbar-expand-lg bg-info">
-  <span class="navbar-text">
-    Bienvenue dans l'annuaire de l'entreprise des Looney !
-  </span>
+    <span class="col-6 navbar-text">
+      Bienvenue dans l'annuaire de l'entreprise des Looney !
+    </span>
+    <span class="col-1 navbar-text alert-info text-center">
+      <a class="alert-link" routerLink="/accueil" routerLinkActive="menu-selectionne"> Accueil </a>
+    </span>
+    <span class="col-1 navbar-text alert-info offset-1 text-center">
+      <a class="alert-link" routerLink="/galerie" routerLinkActive="menu-selectionne"> Galerie </a>
+    </span>
+    <span class="col-1 navbar-text alert-info offset-1 text-center">
+      <a class="alert-link" routerLink="/a-propos" routerLinkActive="menu-selectionne"> A propos </a>
+    </span>  
 </nav>
 
 <div class="row"><br></div>
-
+  
 <main class="container-fluid">
-  <div class="row">
-    <app-recherche-collegue-par-nom class="col-sm"></app-recherche-collegue-par-nom>
-    <app-collegue class="col-sm-7"></app-collegue>
-  </div>
-  <br>
-  <app-form-creation></app-form-creation>
+  <!-- partie qui change en fonction de l'url -->
+  <router-outlet></router-outlet>
 </main>
