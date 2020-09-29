@@ -1,6 +1,7 @@
 <div class="row container-fluid">
     <app-recherche-collegue-par-nom class="col-sm"></app-recherche-collegue-par-nom>
-    <app-collegue class="col-sm-7"></app-collegue>
+    <app-collegue *ngIf="!modeCreation" class="col-sm-7"></app-collegue>
+    <app-form-creation *ngIf="modeCreation && !modeAffichage" class="col-sm-7"></app-form-creation>
   </div>
-  <br>
-  <app-form-creation></app-form-creation>
+  <button type="button" *ngIf="!modeCreation" class="btn btn-link col-2 offset-10" (click)="creerColl()">Créer un nouveau collègue</button>
+  <button type="button" *ngIf="modeCreation" class="btn btn-link col-1 offset-11" (click)="stopCreerColl()">Retour</button>

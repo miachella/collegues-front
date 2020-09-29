@@ -3,13 +3,13 @@
     <div *ngFor="let item of collegues; let i = index">
         <div *ngIf="i % 3 == 0" class="row">
             <div class="col-4 text-center">
-                <a href="http://www.google.fr"><div style="background-image: url('{{item.photoUrl}}')" class="img-thumbnail photo-collegue"></div></a>
+                <a routerLink="/galerie/{{item.matricule}}"><div style="background-image: url('{{item.photoUrl}}')" class="img-thumbnail photo-collegue"></div></a>
             </div>
             <div class="col-4 text-center" *ngIf="i + 1 < collegues.length">
-                <div style="background-image: url('{{collegues[i + 1].photoUrl}}')" class="img-thumbnail photo-collegue"></div>
+                <a routerLink="/galerie/{{collegues[i + 1].matricule}}"><div style="background-image: url('{{collegues[i + 1].photoUrl}}')" class="img-thumbnail photo-collegue"></div></a>
             </div>
             <div class="col-4 text-center" *ngIf="i + 2 < collegues.length">
-                <div style="background-image: url('{{collegues[i + 2].photoUrl}}')" class="img-thumbnail photo-collegue"></div>
+                <a routerLink="/galerie/{{collegues[i + 2].matricule}}"><div style="background-image: url('{{collegues[i + 2].photoUrl}}')" class="img-thumbnail photo-collegue"></div></a>
             </div>
         </div>
     </div>
@@ -22,4 +22,3 @@
   <div *ngIf="erreurTechnique" class="alert alert-danger" role="alert">
     Heu mais keskispass
   </div>
-  

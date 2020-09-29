@@ -9,9 +9,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AccueilComponent implements OnInit {
 
+  modeCreation = false;
+  modeAffichage = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  creerColl() {
+    this.modeCreation = true;
+    this.modeAffichage = false;
+  }
+
+  stopCreerColl() {
+    this.modeCreation = false;
+    this.modeAffichage = true;
+  }
 }

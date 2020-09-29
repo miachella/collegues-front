@@ -34,10 +34,7 @@
 </div>
 
 <div class="row">
-  <div class="col-5 offset-5">
-    <button *ngIf="modeAffichage" type="button" class="btn btn-link" (click)="creerColl()">Créer un nouveau collègue</button>
-  </div>
-  <div class="col-2">
+  <div class="col-2 offset-10">
     <button *ngIf="modeAffichage" type="button" class="btn btn-info" (click)="modifierColl()">Modifier</button>
     <button *ngIf="!modeAffichage" type="button" class="btn btn-info" (click)="validerColl()">Valider</button>
   </div>

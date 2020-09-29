@@ -1,5 +1,5 @@
 import { Collegue } from './../models/Collegue';
-import { CollegueInForm } from '../form-creation/form-creation.component'
+import { CollegueInForm } from '../MenuComponent/accueil/form-creation/form-creation.component'
 import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';

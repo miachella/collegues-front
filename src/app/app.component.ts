@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { from } from 'rxjs';
 import { c1, c2, c3, c4 } from './mock/collegues.mock';
 
 @Component({

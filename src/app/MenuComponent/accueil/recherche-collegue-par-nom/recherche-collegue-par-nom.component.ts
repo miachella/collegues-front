@@ -1,5 +1,5 @@
-import { DataService } from './../services/data.service';
-import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../../services/data.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -12,6 +12,9 @@ export class RechercheCollegueParNomComponent implements OnInit {
   matricules: string[];
   matriculeNonTrouve = false;
   erreurTechnique = false;
+  @Input() modeAffichage: boolean;
+  @Input() modeCreation: boolean;
+
 
 
   constructor(private dataSrv: DataService) { }
@@ -20,6 +23,8 @@ export class RechercheCollegueParNomComponent implements OnInit {
   }
 
   rechercherCol(nomSaisi: string): void {
+    this.modeAffichage=true;
+    this.modeCreation=false;
     this.matricules = null;
     this.dataSrv.rechercherParNom(nomSaisi)
     .subscribe(matriculesBack => {
@@ -37,6 +42,8 @@ export class RechercheCollegueParNomComponent implements OnInit {
   }
 
   selectionnerCol(matricule: string):void {
+    this.modeAffichage=true;
+    this.modeCreation=false;
    this.dataSrv.publierCol(matricule)
    .subscribe(() => { },
    error => this.erreurTechnique = true

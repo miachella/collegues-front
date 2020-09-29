@@ -1,0 +1,20 @@
+<div class="card border-dark bg-info" style="width: 30rem;">
+    <img src="{{col.photoUrl}}" class="card-img border-dark img-thumbnail rounded" style="max-width: 20rem; margin-top: 1rem; margin-left: 5rem; margin-right: 5rem;">
+    <div class="card-body">
+        <div class="row">
+            <div class="col card-text">Matricule :</div><div class="col card-text">{{col.matricule}}</div>
+        </div>
+        <div class="row">
+            <div class="col card-text">Nom :</div><div class="col card-text">{{col.nom | uppercase}}</div>
+        </div>
+        <div class="row">
+          <div class="col card-text">Prénoms :</div><div class="col card-text">{{col.prenoms}}</div>
+        </div>
+        <div class="row">
+            <div class="col card-text">Date de naissance :</div><div class="col card-text">{{col.dateDeNaissance | date:'dd/MM/yyyy'}}</div>
+        </div>
+        <div class="row">
+            <div class="col card-text">E-mail :</div><div class="col card-text">{{col.email}}</div>
+        </div>
+    </div>
+</div>
