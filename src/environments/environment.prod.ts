@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendUrl: 'http://localhost:8080/collegues'
+  backendUrl: 'https://iachella-collegue-api.herokuapp.com/collegues'
 };
